@@ -4,5 +4,6 @@ before_install:
   - sudo apt-get install nunit-console
 before_script:
   - nuget restore date-periods-exception.sln
-after_script:
-- nunit-console src.test/bin/Release/src.test.dll
+script:
+  - xbuild /p:Configuration=Release date-periods-exception.sln
+  - nunit-console src.test/bin/Release/src.test.dll
