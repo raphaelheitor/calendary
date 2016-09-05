@@ -7,25 +7,17 @@ namespace DatePeriodsException.test
     [TestFixture]
     public class DatePeriodTest
     {
-        List<DateTime> listDt = new List<DateTime>();
-        List<DateTime> listDt2 = new List<DateTime>();
-
-        [OneTimeSetUp]
-        public void Setup()
-        {
-            for (int i = 0; i <= 4; i++)
-            {
-                listDt.Add(DateTime.Now.AddDays(i));
-            }
-            for (int i = 0; i <= 7; i++)
-            {
-                listDt2.Add(DateTime.Now.AddDays(i));
-            }
-        }
+        List<DateTime> listDt;
+        List<DateTime> listDt2;
 
         [Test]
         public void GivenPeriodeShouldReturnListofDateInInterval()
         {
+            listDt = new List<DateTime>();
+            for (int i = 0; i <= 4; i++)
+            {
+                listDt.Add(DateTime.Now.AddDays(i));
+            }
             var d1 = DateTime.Now;
             var d2 = DateTime.Now.AddDays(4);
 
@@ -42,6 +34,12 @@ namespace DatePeriodsException.test
         [Test]
         public void GivenPeriodeWithExceptDateListShouldReturnListofValidDatesInInterval()
         {
+            listDt = new List<DateTime>();
+            for (int i = 0; i <= 4; i++)
+            {
+                listDt.Add(DateTime.Now.AddDays(i));
+            }
+
             var d1 = DateTime.Now;
             var d2 = DateTime.Now.AddDays(4);
             var except = new List<DateTime>();
@@ -59,6 +57,12 @@ namespace DatePeriodsException.test
         [Test]
         public void GivenPeriodeWithExceptDateListShouldReturnListWithBusinessDayOnly()
         {
+            listDt2 = new List<DateTime>();
+            for (int i = 0; i <= 7; i++)
+            {
+                listDt2.Add(DateTime.Now.AddDays(i));
+            }
+
             var d1 = new DateTime(2016, 9, 5);
             var d2 = d1.AddDays(6);
             
