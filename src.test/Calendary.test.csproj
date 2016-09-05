@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\DatePeriodsException.csproj">
+    <ProjectReference Include="..\src\Calendary.csproj">
       <Project>{7bbfd241-8d5b-427e-82b1-527985cf1503}</Project>
-      <Name>DatePeriodsException</Name>
+      <Name>Calendary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DatePeriodsException
+namespace Calendary
 {
     public class DatePeriod
     {

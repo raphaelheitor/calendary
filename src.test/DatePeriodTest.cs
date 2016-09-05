@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace DatePeriodsException.test
+namespace Calendary.test
 {
     [TestFixture]
     public class DatePeriodTest

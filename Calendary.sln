@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatePeriodsException", "src\DatePeriodsException.csproj", "{7BBFD241-8D5B-427E-82B1-527985CF1503}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendary", "src\Calendary.csproj", "{7BBFD241-8D5B-427E-82B1-527985CF1503}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatePeriodsExcepetion.test", "src.test\DatePeriodsExcepetion.test.csproj", "{C9BE0993-7401-434B-A2CE-DEA3883BFF50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendary.test", "src.test\Calendary.test.csproj", "{C9BE0993-7401-434B-A2CE-DEA3883BFF50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

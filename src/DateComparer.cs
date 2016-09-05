@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DatePeriodsException
+namespace Calendary
 {
     class DateComparer : IEqualityComparer<DateTime>
     {
