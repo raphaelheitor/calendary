@@ -1,8 +1,8 @@
 language: csharp
 solution: date-periods-exception.sln
-install:
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
   - nuget restore date-periods-exception.sln
-  - nuget install NUnit.Runners -Version 3.4.1 -OutputDirectory testrunner
-script:
-  - xbuild /p:Configuration=Release date-periods-exception.sln
-  - mono ./testrunner/NUnit.Runners.3.4.1/tools/nunit-console.exe ./src.test/bin/Release/src.test.dll
+after_script:
+- nunit-console src.test/bin/Release/src.test.dll
