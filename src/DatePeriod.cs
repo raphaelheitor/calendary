@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace src
+namespace DatePeriodsException
 {
     public class DatePeriod
     {
@@ -12,20 +10,25 @@ namespace src
         private DateTime end;
         private List<DateTime> exceptDates;
         private List<DateTime> periodDates;
+        private List<DateTime> periodDatesBusinessDaysOnly;
 
-        public List<DateTime> PeriodDates
+        public List<DateTime> Period()
         {
-            get
-            {
-                return periodDates;
-            }
+            return periodDates;
+        }
+        public List<DateTime> PeriodWithBusinessDaysOnly()
+        {
+            if (periodDatesBusinessDaysOnly == null)
+                periodDatesBusinessDaysOnly = periodDates
+                    .Where(x => x.DayOfWeek != DayOfWeek.Saturday && x.DayOfWeek != DayOfWeek.Sunday)
+                    .ToList();
+            return periodDatesBusinessDaysOnly;
         }
 
         public DatePeriod(DateTime init, DateTime end)
         {
             this.init = init.Date;
             this.end = end.Date;
-            this.exceptDates = new List<DateTime>();
             listOfDateInPeriod();
         }
         public DatePeriod(DateTime init, DateTime end, List<DateTime> exceptDates)
@@ -34,17 +37,19 @@ namespace src
             this.end = end.Date;
             this.exceptDates = exceptDates;
             listOfDateInPeriod();
+            removeExceptions();
         }
-
-
+        private void removeExceptions()
+        {
+            this.periodDates = this.periodDates.Except<DateTime>(this.exceptDates, new DateComparer()).ToList();
+        }
         private void listOfDateInPeriod()
         {
             this.periodDates = new List<DateTime>();
             var date = this.init;
             while (date <= this.end)
             {
-                if (!this.exceptDates.Contains<DateTime>(date.Date, new DateComparer()))
-                    this.periodDates.Add(date);
+                this.periodDates.Add(date);
                 date = date.AddDays(1);
             }
         }
