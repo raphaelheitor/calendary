@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DateComparer.cs" />
     <Compile Include="DatePeriod.cs" />
+    <Compile Include="DateTimeExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

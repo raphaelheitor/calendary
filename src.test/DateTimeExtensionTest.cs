@@ -1,6 +1,5 @@
 ﻿using System;
 using NUnit.Framework;
-using System.Linq;
 using ExtensionMethods;
 
 namespace src.test

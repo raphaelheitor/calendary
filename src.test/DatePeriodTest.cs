@@ -60,7 +60,7 @@ namespace Calendary.test
             listDt2 = new List<DateTime>();
             for (int i = 0; i <= 7; i++)
             {
-                listDt2.Add(DateTime.Now.AddDays(i));
+                listDt2.Add(new DateTime(2016, 9, 5).AddDays(i));
             }
 
             var d1 = new DateTime(2016, 9, 5);
