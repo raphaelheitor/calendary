@@ -1,9 +1,9 @@
 language: csharp
-solution: date-periods-exception.sln
+solution: Calendary.sln
 before_install:
   - sudo apt-get install nunit-console
 before_script:
-  - nuget restore date-periods-exception.sln
+  - nuget restore Calendary.sln
 script:
-  - xbuild /p:Configuration=Release date-periods-exception.sln
+  - xbuild /p:Configuration=Release Calendary.sln
   - nunit-console src.test/bin/Release/src.test.dll
