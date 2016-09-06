@@ -21,5 +21,10 @@ namespace ExtensionMethods
             return age;
                 
         }
+        public static int AgeInDays(this DateTime date)
+        {
+            TimeSpan ts = DateTime.Now - date;
+            return ts.Duration().Days;
+        }
     }
 }

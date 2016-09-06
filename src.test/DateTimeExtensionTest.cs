@@ -23,8 +23,14 @@ namespace src.test
         [Test]
         public void GivenADateShouldReturnTheAge()
         {
-            var d1 = new DateTime(1990, 8, 22);
-            Assert.AreEqual(26, d1.Age());
+            var d1 = DateTime.Now.AddYears(-20).AddDays(5);
+            Assert.AreEqual(19, d1.Age());
+        }
+        [Test]
+        public void GivenADateShouldReturnTheAgeInDays()
+        {
+            var d1 = DateTime.Now.AddDays(-15);
+            Assert.AreEqual(15, d1.AgeInDays());
         }
     }
 }
