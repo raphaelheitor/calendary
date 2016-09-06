@@ -11,13 +11,13 @@ namespace src.test
         public void GivenADateShouldReturnTomorrowDate()
         {
             var d1 = new DateTime(2016, 9, 5);
-            Assert.AreEqual(d1.Tomorrow().ToShortDateString(), new DateTime(2016, 9, 4).ToShortDateString());
+            Assert.AreEqual(new DateTime(2016, 9, 6).ToShortDateString(), d1.Tomorrow().ToShortDateString());
         }
         [Test]
         public void GivenADateShouldReturnYesterdayDate()
         {
             var d1 = new DateTime(2016, 9, 5);
-            Assert.AreEqual(d1.Yesterday().ToShortDateString(), new DateTime(2016, 9, 6).ToShortDateString());
+            Assert.AreEqual(new DateTime(2016, 9, 4).ToShortDateString(), d1.Yesterday().ToShortDateString());
         }
         [Test]
         public void GivenADateShouldReturnTheAge()
