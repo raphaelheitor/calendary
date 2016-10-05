@@ -26,6 +26,12 @@ namespace src.test
             Assert.AreEqual(19, d1.Age());
         }
         [Test]
+        public void GivenATodayDayeShouldReturnTheAgeZero()
+        {
+            var d1 = DateTime.Now;
+            Assert.AreEqual(0, d1.Age());
+        }
+        [Test]
         public void GivenADateShouldReturnTheAgeInDays()
         {
             var d1 = DateTime.Now.AddDays(-15);

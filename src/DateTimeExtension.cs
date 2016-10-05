@@ -16,7 +16,7 @@ namespace ExtensionMethods
         {
             var now = DateTime.Now;
             var age = now.Year - date.Year;
-            if (now.Month > date.Month || (now.Month == date.Month && now.Day <= date.Day))
+            if (now.Month > date.Month || (now.Month == date.Month && now.Day < date.Day))
                 age -= 1;
             return age;
                 
