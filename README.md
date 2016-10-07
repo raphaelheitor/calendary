@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/raphaelheitor/calendary.svg?branch=master)](https://travis-ci.org/raphaelheitor/calendary)
+[![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg?maxAge=2592000)](https://www.nuget.org/packages/calendary/)
 # Calendary
 Library created to help work with dates and periods.
 
