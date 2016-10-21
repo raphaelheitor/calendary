@@ -61,6 +61,36 @@ namespace src.test
             var d1 = new DateTime(2016, 10, 31);
             Assert.AreEqual(0, d1.RemainingDaysInMonth());
         }
+        [Test]
+        public void GivenADateShouldReturnRemainingHoursInYear()
+        {
+            var d1 = new DateTime(2016, 10, 10);
+            Assert.AreEqual(1968, d1.RemainingHoursInYear());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingHoursInMonth()
+        {
+            var d1 = new DateTime(2016, 10, 10);
+            Assert.AreEqual(504, d1.RemainingHoursInMonth());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingHoursInDay()
+        {
+            var d1 = new DateTime(2016, 10, 10, 20, 59, 59);
+            Assert.AreEqual(3, d1.RemainingHoursInDay());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingZeroHoursInYear()
+        {
+            var d1 = new DateTime(2016, 12, 31);
+            Assert.AreEqual(0, d1.RemainingHoursInYear());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingZeroHoursInMonth()
+        {
+            var d1 = new DateTime(2016, 10, 31);
+            Assert.AreEqual(0, d1.RemainingHoursInMonth());
+        }
 
         [Test]
         public void GivenADateInRangeShouldReturnTrue()
