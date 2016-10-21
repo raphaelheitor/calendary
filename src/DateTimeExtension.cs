@@ -26,6 +26,16 @@ namespace ExtensionMethods
             TimeSpan ts = DateTime.Now - date;
             return ts.Duration().Days;
         }
+        public static int RemainingDaysInYear(this DateTime date)
+        {
+            TimeSpan ts = new DateTime(date.Year, 12, 31) - date;
+            return ts.Duration().Days;
+        }
+        public static int RemainingDaysInMonth(this DateTime date)
+        {
+            TimeSpan ts = new DateTime(date.Year, date.Month, 1).AddMonths(1).AddDays(-1) - date;
+            return ts.Duration().Days;
+        }
 
         public static bool Between(this DateTime date, DateTime first, DateTime last)
         {

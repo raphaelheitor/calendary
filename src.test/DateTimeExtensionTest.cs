@@ -37,6 +37,30 @@ namespace src.test
             var d1 = DateTime.Now.AddDays(-15);
             Assert.AreEqual(15, d1.AgeInDays());
         }
+        [Test]
+        public void GivenADateShouldReturnRemainingDaysInYear()
+        {
+            var d1 = new DateTime(2016, 10, 10);
+            Assert.AreEqual(82, d1.RemainingDaysInYear());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingDaysInMonth()
+        {
+            var d1 = new DateTime(2016, 10, 10);
+            Assert.AreEqual(21, d1.RemainingDaysInMonth());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingZeroDaysInYear()
+        {
+            var d1 = new DateTime(2016, 12, 31);
+            Assert.AreEqual(0, d1.RemainingDaysInYear());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingZeroDaysInMonth()
+        {
+            var d1 = new DateTime(2016, 10, 31);
+            Assert.AreEqual(0, d1.RemainingDaysInMonth());
+        }
 
         [Test]
         public void GivenADateInRangeShouldReturnTrue()
