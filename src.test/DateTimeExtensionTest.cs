@@ -73,27 +73,27 @@ namespace src.test
         [Test]
         public void GivenAFutureDateShouldReturnTrue()
         {
-            var d1 = new DateTime(2016, 10, 21);
+            var d1 = new DateTime(2056, 10, 21);
             Assert.AreEqual(true, d1.IsFuture());
         }
 
         [Test]
         public void GivenAPastDateShouldReturnTrue()
         {
-            var d1 = new DateTime(2016, 10, 19);
+            var d1 = new DateTime(2006, 10, 19);
             Assert.AreEqual(true, d1.IsPast());
         }
         [Test]
         public void GivenAFutureDateShouldReturnFalse()
         {
-            var d1 = new DateTime(2016, 10, 21);
+            var d1 = new DateTime(2056, 10, 21);
             Assert.AreEqual(false, d1.IsPast());
         }
 
         [Test]
         public void GivenAPastDateShouldReturnFalse()
         {
-            var d1 = new DateTime(2016, 10, 19);
+            var d1 = new DateTime(2006, 10, 19);
             Assert.AreEqual(false, d1.IsFuture());
         }
 
@@ -111,7 +111,7 @@ namespace src.test
         }
 
         [Test]
-        public void GivenADateShoulRetornTheNextSunday()
+        public void GivenADateShoulReturnTheNextSunday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -119,7 +119,7 @@ namespace src.test
             Assert.AreEqual(nextSunday.Date, d1.NextSunday().Date);
         }
         [Test]
-        public void GivenASundayShoulRetornTheNextSunday()
+        public void GivenASundayShoulReturnTheNextSunday()
         {
             var d1 = new DateTime(2016, 10, 16);
 
@@ -127,7 +127,7 @@ namespace src.test
             Assert.AreEqual(nextSunday.Date, d1.NextSunday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheNextMonday()
+        public void GivenADateShoulReturnTheNextMonday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -135,7 +135,7 @@ namespace src.test
             Assert.AreEqual(nextMonday.Date, d1.NextMonday().Date);
         }
         [Test]
-        public void GivenAMondayShoulRetornTheNextMonday()
+        public void GivenAMondayShoulReturnTheNextMonday()
         {
             var d1 = new DateTime(2016, 10, 17);
 
@@ -143,7 +143,7 @@ namespace src.test
             Assert.AreEqual(nextMonday.Date, d1.NextMonday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheNextTuesday()
+        public void GivenADateShoulReturnTheNextTuesday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -151,7 +151,7 @@ namespace src.test
             Assert.AreEqual(nextTuesday.Date, d1.NextTuesday().Date);
         }
         [Test]
-        public void GivenATuesdayShoulRetornTheNextTuesday()
+        public void GivenATuesdayShoulReturnTheNextTuesday()
         {
             var d1 = new DateTime(2016, 10, 18);
 
@@ -159,7 +159,7 @@ namespace src.test
             Assert.AreEqual(nextTuesday.Date, d1.NextTuesday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheNextWednesday()
+        public void GivenADateShoulReturnTheNextWednesday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -167,7 +167,7 @@ namespace src.test
             Assert.AreEqual(nextWednesday.Date, d1.NextWednesday().Date);
         }
         [Test]
-        public void GivenAWednesdayShoulRetornTheNextWednesday()
+        public void GivenAWednesdayShoulReturnTheNextWednesday()
         {
             var d1 = new DateTime(2016, 10, 19);
 
@@ -175,7 +175,7 @@ namespace src.test
             Assert.AreEqual(nextWednesday.Date, d1.NextWednesday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheNextThursday()
+        public void GivenADateShoulReturnTheNextThursday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -183,7 +183,7 @@ namespace src.test
             Assert.AreEqual(nextThursday.Date, d1.NextThursday().Date);
         }
         [Test]
-        public void GivenAThursdayShoulRetornTheNextThursday()
+        public void GivenAThursdayShoulReturnTheNextThursday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -191,7 +191,7 @@ namespace src.test
             Assert.AreEqual(nextThursday.Date, d1.NextThursday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheNextFriday()
+        public void GivenADateShoulReturnTheNextFriday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -199,7 +199,7 @@ namespace src.test
             Assert.AreEqual(nextFriday.Date, d1.NextFriday().Date);
         }
         [Test]
-        public void GivenAFridayShoulRetornTheNextFriday()
+        public void GivenAFridayShoulReturnTheNextFriday()
         {
             var d1 = new DateTime(2016, 10, 21);
 
@@ -207,7 +207,7 @@ namespace src.test
             Assert.AreEqual(nextFriday.Date, d1.NextFriday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheNextSaturday()
+        public void GivenADateShoulReturnTheNextSaturday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -215,7 +215,7 @@ namespace src.test
             Assert.AreEqual(nextSaturday.Date, d1.NextSaturday().Date);
         }
         [Test]
-        public void GivenASaturdayShoulRetornTheNextSaturday()
+        public void GivenASaturdayShoulReturnTheNextSaturday()
         {
             var d1 = new DateTime(2016, 10, 22);
 
@@ -224,7 +224,7 @@ namespace src.test
         }
 
         [Test]
-        public void GivenADateShoulRetornTheLastSunday()
+        public void GivenADateShoulReturnTheLastSunday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -232,7 +232,7 @@ namespace src.test
             Assert.AreEqual(lastSunday.Date, d1.LastSunday().Date);
         }
         [Test]
-        public void GivenASundayShoulRetornTheLastSunday()
+        public void GivenASundayShoulReturnTheLastSunday()
         {
             var d1 = new DateTime(2016, 10, 23);
 
@@ -240,7 +240,7 @@ namespace src.test
             Assert.AreEqual(nextSunday.Date, d1.LastSunday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheLastMonday()
+        public void GivenADateShoulReturnTheLastMonday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -248,7 +248,7 @@ namespace src.test
             Assert.AreEqual(lastMonday.Date, d1.LastMonday().Date);
         }
         [Test]
-        public void GivenAMondayShoulRetornTheLastMonday()
+        public void GivenAMondayShoulReturnTheLastMonday()
         {
             var d1 = new DateTime(2016, 10, 24);
 
@@ -256,7 +256,7 @@ namespace src.test
             Assert.AreEqual(lastMonday.Date, d1.LastMonday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheLastTuesday()
+        public void GivenADateShoulReturnTheLastTuesday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -264,7 +264,7 @@ namespace src.test
             Assert.AreEqual(lastTuesday.Date, d1.LastTuesday().Date);
         }
         [Test]
-        public void GivenATuesdayShoulRetornTheLastTuesday()
+        public void GivenATuesdayShoulReturnTheLastTuesday()
         {
             var d1 = new DateTime(2016, 10, 25);
 
@@ -272,7 +272,7 @@ namespace src.test
             Assert.AreEqual(lastTuesday.Date, d1.LastTuesday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheLastWednesday()
+        public void GivenADateShoulReturnTheLastWednesday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -280,7 +280,7 @@ namespace src.test
             Assert.AreEqual(lastWednesday.Date, d1.LastWednesday().Date);
         }
         [Test]
-        public void GivenAWednesdayShoulRetornTheLastWednesday()
+        public void GivenAWednesdayShoulReturnTheLastWednesday()
         {
             var d1 = new DateTime(2016, 10, 26);
 
@@ -288,7 +288,7 @@ namespace src.test
             Assert.AreEqual(lastWednesday.Date, d1.LastWednesday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheLastThursday()
+        public void GivenADateShoulReturnTheLastThursday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -296,7 +296,7 @@ namespace src.test
             Assert.AreEqual(lastThursday.Date, d1.LastThursday().Date);
         }
         [Test]
-        public void GivenAThursdayShoulRetornTheLastThursday()
+        public void GivenAThursdayShoulReturnTheLastThursday()
         {
             var d1 = new DateTime(2016, 10, 27);
 
@@ -304,7 +304,7 @@ namespace src.test
             Assert.AreEqual(lastThursday.Date, d1.LastThursday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheLastFriday()
+        public void GivenADateShoulReturnTheLastFriday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -312,7 +312,7 @@ namespace src.test
             Assert.AreEqual(lastFriday.Date, d1.LastFriday().Date);
         }
         [Test]
-        public void GivenAFridayShoulRetornTheLastFriday()
+        public void GivenAFridayShoulReturnTheLastFriday()
         {
             var d1 = new DateTime(2016, 10, 28);
 
@@ -320,7 +320,7 @@ namespace src.test
             Assert.AreEqual(lastFriday.Date, d1.LastFriday().Date);
         }
         [Test]
-        public void GivenADateShoulRetornTheLastSaturday()
+        public void GivenADateShoulReturnTheLastSaturday()
         {
             var d1 = new DateTime(2016, 10, 20);
 
@@ -328,7 +328,7 @@ namespace src.test
             Assert.AreEqual(lastSaturday.Date, d1.LastSaturday().Date);
         }
         [Test]
-        public void GivenASaturdayShoulRetornTheLastSaturday()
+        public void GivenASaturdayShoulReturnTheLastSaturday()
         {
             var d1 = new DateTime(2016, 10, 29);
 
