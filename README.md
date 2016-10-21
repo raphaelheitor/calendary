@@ -5,7 +5,7 @@ Library created to help work with dates and periods.
 
 Functions already available:
 
-####DateTimeExtension
+####DateTimeExtension (remember, add using ExtensionMethods;)
 #####Tomorrow:
 ```csharp
 DateTime date = new DateTime(2016, 9, 5);
@@ -25,6 +25,54 @@ date.Age(); //19
 ```csharp
 DateTime date = DateTime.Now.AddDays(-15);
 date.AgeInDays(); //15
+```
+#####Next DayofWeek
+```csharp
+DateTime date = new DateTime(2016, 10, 16);
+date.NextSunday().Date; //2016-10-23
+//all week days
+```
+#####Last DayofWeek
+```csharp
+DateTime date = new DateTime(2016, 10, 23);
+date.LastSunday().Date; //2016-10-16
+//all week days
+```
+#####DateTimeExtension (Checker)
+######Between:
+```csharp
+DateTime date = new DateTime(2016, 10, 21);
+DateTime first = new DateTime(2016, 10, 20);
+DateTime last = new DateTime(2016, 10, 25);
+date.Between(first, last); //true
+```
+######Birthday:
+```csharp
+DateTime born = new DateTime(1990, 10, 20);
+DateTime birthday = new DateTime(2016, 10, 20);
+born.IsBirthday(birthday); //true
+born.IsBirthday(); //false (based on actual date)
+```
+######Future:
+```csharp
+DateTime date = new DateTime(2090, 10, 20);
+date.IsFuture(); //true
+```
+######Past:
+```csharp
+DateTime date = new DateTime(1990, 10, 20);
+date.IsPast(); //true
+```
+######DayOfWeek:
+```csharp
+DateTime date = new DateTime(2016, 10, 21);
+date.IsFriday(); //true
+date.IsSaturday(); //false
+date.IsSunday(); //false
+date.IsMonday(); //false
+date.IsTuesday(); //false
+date.IsWednesday(); //false
+date.IsThursday(); //false
 ```
 ####DatePeriod
 #####Period:
