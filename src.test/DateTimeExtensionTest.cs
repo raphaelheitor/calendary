@@ -64,7 +64,7 @@ namespace src.test
         [Test]
         public void GivenADateShouldReturnRemainingHoursInYear()
         {
-            var d1 = new DateTime(2016, 10, 10);
+            var d1 = new DateTime(2016, 10, 10, 23, 59, 59, 999);
             Assert.AreEqual(1968, d1.RemainingHoursInYear());
         }
         [Test]
@@ -76,20 +76,68 @@ namespace src.test
         [Test]
         public void GivenADateShouldReturnRemainingHoursInDay()
         {
-            var d1 = new DateTime(2016, 10, 10, 20, 59, 59);
+            var d1 = new DateTime(2016, 10, 10, 20, 59, 59, 999);
             Assert.AreEqual(3, d1.RemainingHoursInDay());
         }
         [Test]
         public void GivenADateShouldReturnRemainingZeroHoursInYear()
         {
-            var d1 = new DateTime(2016, 12, 31);
+            var d1 = new DateTime(2016, 12, 31, 23, 59, 59, 999);
             Assert.AreEqual(0, d1.RemainingHoursInYear());
         }
         [Test]
         public void GivenADateShouldReturnRemainingZeroHoursInMonth()
         {
-            var d1 = new DateTime(2016, 10, 31);
-            Assert.AreEqual(0, d1.RemainingHoursInMonth());
+            var d1 = new DateTime(2016, 10, 31, 23, 59, 59, 999);
+            Assert.AreEqual(0, d1.RemainingMinutesInMonth());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingZeroHoursInDay()
+        {
+            var d1 = new DateTime(2016, 10, 31, 23, 59, 59, 999);
+            Assert.AreEqual(0, d1.RemainingMinutesInDay());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingMinutesInYear()
+        {
+            var d1 = new DateTime(2016, 12, 31, 23, 50, 0);
+            Assert.AreEqual(9.9999833333333328d, d1.RemainingMinutesInYear());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingMinutesInMonth()
+        {
+            var d1 = new DateTime(2016, 10, 31 , 23, 0, 59, 999);
+            Assert.AreEqual(59, d1.RemainingMinutesInMonth());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingMinutesInDay()
+        {
+            var d1 = new DateTime(2016, 10, 10, 20, 59, 59, 999);
+            Assert.AreEqual(180, d1.RemainingMinutesInDay());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingMinutesInHour()
+        {
+            var d1 = new DateTime(2016, 10, 10, 20, 59, 59, 999);
+            Assert.AreEqual(3, d1.RemainingHoursInDay());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingZeroMinutesInYear()
+        {
+            var d1 = new DateTime(2016, 12, 31, 23, 59, 59, 999);
+            Assert.AreEqual(0, d1.RemainingMinutesInYear());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingZeroMinutesInMonth()
+        {
+            var d1 = new DateTime(2016, 10, 31, 23, 59, 59, 999);
+            Assert.AreEqual(0, d1.RemainingMinutesInMonth());
+        }
+        [Test]
+        public void GivenADateShouldReturnRemainingZeroMinutesInDay()
+        {
+            var d1 = new DateTime(2016, 10, 31, 23, 59, 59, 999);
+            Assert.AreEqual(0, d1.RemainingMinutesInDay());
         }
 
         [Test]

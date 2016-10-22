@@ -38,7 +38,7 @@ namespace ExtensionMethods
         }
         public static double RemainingHoursInYear(this DateTime date)
         {
-            TimeSpan ts = new DateTime(date.Year, 12, 31) - date;
+            TimeSpan ts = new DateTime(date.Year, 12, 31, 23, 59, 59, 999) - date;
             return ts.Duration().TotalHours;
         }
         public static double RemainingHoursInMonth(this DateTime date)
@@ -48,8 +48,28 @@ namespace ExtensionMethods
         }
         public static double RemainingHoursInDay(this DateTime date)
         {
-            TimeSpan ts = new DateTime(date.Year, date.Month, date.Day, 23, 59, 59) - date;
+            TimeSpan ts = new DateTime(date.Year, date.Month, date.Day, 23, 59, 59, 999) - date;
             return ts.Duration().TotalHours;
+        }
+        public static double RemainingMinutesInYear(this DateTime date)
+        {
+            TimeSpan ts = new DateTime(date.Year, 12, 31, 23, 59, 59, 999) - date;
+            return ts.Duration().TotalMinutes;
+        }
+        public static double RemainingMinutesInMonth(this DateTime date)
+        {
+            TimeSpan ts = new DateTime(date.Year, date.Month, 1, 23, 59, 59, 999).AddMonths(1).AddDays(-1) - date;
+            return ts.Duration().TotalMinutes;
+        }
+        public static double RemainingMinutesInDay(this DateTime date)
+        {
+            TimeSpan ts = new DateTime(date.Year, date.Month, date.Day, 23, 59, 59, 999) - date;
+            return ts.Duration().TotalMinutes;
+        }
+        public static double RemainingMinutesInHour(this DateTime date)
+        {
+            TimeSpan ts = new DateTime(date.Year, date.Month, date.Day, date.Hour, 0, 0).AddHours(1) - date;
+            return ts.Duration().TotalMinutes;
         }
 
         public static bool Between(this DateTime date, DateTime first, DateTime last)
